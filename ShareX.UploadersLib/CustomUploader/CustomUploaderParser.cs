@@ -456,5 +456,14 @@ namespace ShareX.UploadersLib
 
             return null;
         }
+        private string ParseSyntaxMD5(string syntax)
+        {
+            if (!string.IsNullOrEmpty(syntax))
+            {
+                return TranslatorHelper.TextToHash(syntax, HashType.MD5);
+            }
+
+            return null;
+        }
     }
 }
