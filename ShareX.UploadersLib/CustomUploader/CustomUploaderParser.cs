@@ -251,6 +251,10 @@ namespace ShareX.UploadersLib
             {
                 return ParseSyntaxBase64(value);
             }
+            else if (CheckKeyword(syntax, "md5", out value)) // Example: Basic $base64:username:password$
+            {
+                return ParseSyntaxMD5(value);
+            }
 
             // Invalid syntax
             return null;
